@@ -4,7 +4,7 @@
 ##   Bitcoin Node Image   ##
 ##   ==================   ##
 ##                        ##
-##   Version: 251009.01   ##
+##   Version: 251208.01   ##
 ##                        ##
 ##  Core/Knots by Rui P.  ##
 ##                        ##
@@ -30,7 +30,7 @@ RUN tar xzf bitcoin*tar.gz \
 	# Create blockchain data directory
 	&& mkdir bitcoin-node-data \
 	# Update package sources and upgrade OS
-	&& apt-get update && apt-get upgrade -y
+	&& apt-get update && apt-get full-upgrade -y
 
 # On container start launch the Bitcoin Node
 ENTRYPOINT ["./bitcoin-node/bin/bitcoind","-datadir=/home/bitcoin-node-data"]
